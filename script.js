@@ -1,53 +1,57 @@
 'use strict';
-const table = document.querySelector('table');
-let payType = document.querySelector('#payment');
-let name = document.querySelector('#nameInput');
-let date = document.querySelector('#dateInput');
-let amount = document.querySelector('#amountInput');
+
+const tBody = document.querySelector('tbody');
+const delBtn = document.createElement('button');
+
+
+let expenses =  {
+  currency: document.querySelector('#payment').value,
+  purchase: document.querySelector('#nameInput').value,
+  date: document.querySelector('#dateInput').value,
+  cost: document.querySelector('#amountInput').value
+};
+
+const userInputs = [
+  document.querySelector('#payment'),
+  document.querySelector('#nameInput'),
+  document.querySelector('#dateInput'),
+  document.querySelector('#amountInput')
+];
 
 
 
-const remove = document.createElement('button');
-remove.innerHTML = '<a>x</>';
 
-const userData = userInput => {
-  let td = document.createElement('td');
-  td.innerText = `${userInput.value}`;
-  let tr = document.createElement('tr');
-  tr.appendChild(td);
-  table.appendChild(tr);
-}
+
+
+
 
 
 
 
 document.querySelector('#submitBtn').addEventListener('click', (e) => {
-    userData(payType);
-    userData(name);
-    userData(date);
-    userData(amount);
-  
-  
-
-//   remove.addEventListener('click', (e) => {
-//     tr.remove();
-//  });
  
-  e.preventDefault();
+
+
+
+
+
+
+
+
+
+
+
+e.preventDefault();
 });
 
 
-//   delBtn();
-//   // td = document.createElement('td');
-//   // td = remove;
-//   // tr.appendChild(td);
+
+// const expenseAdded = function() {
+//   tBody.append("<tr>" + "<td>" + `${payType.value}` + "</td>" + "<td>" + `${item.value}` + "</td>" + "<td>" + `${theDate.value}` + "</td>" + "<td>" + `${amount.value}` + "</td>" + "<td>");
+
+// };
 
 
-
-
-
-
-
-
-
+// if(`${item.value}` != null && `${item.value}` != '') {
+//   expenseAdded();
 
