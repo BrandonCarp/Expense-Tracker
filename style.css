@@ -34,16 +34,16 @@ form {
   font-weight: 100;
 }
 
-#type {
+#currencyLabel {
   font-weight: lighter;
 }
 
-#payment {
+#costLabel {
   width: 200px;
   margin-left: 1rem;
 }
 
-#name {
+#itemLabel {
   font-weight: lighter;
   padding-left: 0.8rem;
 }

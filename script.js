@@ -1,26 +1,44 @@
 'use strict';
-
-const tBody = document.querySelector('tbody');
+// Inputs
+const currency = document.querySelector('#payment');
+const item = document.querySelector('#name');
+const theDay = document.querySelector('#date');
+const cost = document.querySelector('#amount');
+// Non Inputs
+const tBody = document.querySelector('#tBody');
 const delBtn = document.createElement('button');
 
 
-let expenses =  {
-  currency: document.querySelector('#payment').value,
-  purchase: document.querySelector('#nameInput').value,
-  date: document.querySelector('#dateInput').value,
-  cost: document.querySelector('#amountInput').value
-};
 
-const userInputs = [
-  document.querySelector('#payment'),
-  document.querySelector('#nameInput'),
-  document.querySelector('#dateInput'),
-  document.querySelector('#amountInput')
-];
+let newRow = function(theCurrency, theItem, theDate, theCost) {
+  let rowElement = document.createElement('tr');
+  let currencyElement = document.createElement('td');
+  let itemElement = document.createElement('td');
+  let dateElement = document.createElement('td');
+  let costElement = document.createElement('td');
 
+  currencyElement.textContent = currency.value;
+  itemElement.textContent = item.value;
+  dateElement.textContent = theDay.value;
+  costElement.textContent = cost.value;
 
 
+  tBody.appendChild(rowElement);
 
+  rowElement.appendChild(currencyElement);
+  rowElement.appendChild(itemElement);
+  rowElement.appendChild(dateElement);
+  rowElement.appendChild(costElement);
+
+
+
+  item.value = '';
+  theDay.value = '';
+  cost.value = '';
+
+
+
+}
 
 
 
@@ -29,29 +47,9 @@ const userInputs = [
 
 
 document.querySelector('#submitBtn').addEventListener('click', (e) => {
- 
-
-
-
-
-
-
-
-
-
-
+  newRow(currency.value, item.value, theDay.value, cost.value);
 
 e.preventDefault();
 });
 
-
-
-// const expenseAdded = function() {
-//   tBody.append("<tr>" + "<td>" + `${payType.value}` + "</td>" + "<td>" + `${item.value}` + "</td>" + "<td>" + `${theDate.value}` + "</td>" + "<td>" + `${amount.value}` + "</td>" + "<td>");
-
-// };
-
-
-// if(`${item.value}` != null && `${item.value}` != '') {
-//   expenseAdded();
 
