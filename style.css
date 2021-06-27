@@ -21,7 +21,7 @@ form {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  height: 100vh;
+  margin-top: 5rem;
 }
 
 #expenseBody h1 {
@@ -118,3 +118,9 @@ tbody td {
   padding: 0.3rem;
   color: black;
 }
+
+tbody{
+  overflow-y: scroll;
+}
+
+
