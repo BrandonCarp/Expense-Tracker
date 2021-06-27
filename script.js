@@ -16,17 +16,27 @@ let newRow = function(theCurrency, theItem, theDate, theCost) {
   let costElement = document.createElement('td');
   let delElement = document.createElement('td');
 
-  
+  if(currency.value === 'card') {
+    currencyElement.innerHTML = '<i class="far fa-credit-card"></i>';
+  } else if(currency.value == 'crypto') {
+    currencyElement.innerHTML = '<i class="fab fa-btc"></i>';
+  }  else {
+    currencyElement.innerHTML = '<i class="fas fa-money-bill-wave"></i>';
+  }
 
-  currencyElement.textContent = currency.value;
+  if(currency.value === 'card') {
+    costElement.innerHTML =  '<i class="far fa-credit-card">  </i> ' + cost.value;
+   } else if(currency.value == 'crypto') {
+    costElement.innerHTML = '<i class="fab fa-btc"></i>' + cost.value; 
+    }   else {
+      costElement.innerHTML = '<i class="fas fa-money-bill-wave"></i>'  + cost.value;
+    }
+
   itemElement.textContent = item.value;
   dateElement.textContent = theDay.value;
-  costElement.textContent = cost.value;
   costElement.style = 'color: red';
-
-
-
-  delElement.innerHTML = `<button>x</button`;
+  // Delete Button
+  delElement.innerHTML = `<i class="fas fa-trash-alt"></i>`;
   delElement.className = 'delBtn';
   
  delElement.firstChild.addEventListener('click', e => {
@@ -47,9 +57,33 @@ let newRow = function(theCurrency, theItem, theDate, theCost) {
  }
 
 
-  item.value = '';
-  theDay.value = '';
-  cost.value = '';
+//  Saving to local storage  
+ const localStorageExpense = localStorage.getItem('expenses');
+
+ let expenses;
+ if(localStorageExpense === null){
+     expenses = []; 
+ }  else {
+   expenses = JSON.parse(localStorageExpense);
+ }
+
+
+
+ expenses.push(currency.value);
+ expenses.push(item.value);
+ expenses.push(theDay.value);
+ expenses.push(cost.value);
+
+ localStorage.setItem('expenses', JSON.stringify( expenses ) );
+
+let expenseList = storage.getItem(expenses);
+
+
+
+currency.value = '';
+item.value = '';
+theDay.value = '';
+cost.value = '';
 }
 
 

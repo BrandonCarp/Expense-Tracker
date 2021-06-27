@@ -21,7 +21,7 @@ form {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  margin-top: 5rem;
+  margin-top: 30vh;
 }
 
 #expenseBody h1 {
@@ -119,8 +119,10 @@ tbody td {
   color: black;
 }
 
-tbody{
+tbody {
   overflow-y: scroll;
 }
 
-
+.delBtn {
+  cursor: pointer;
+}
