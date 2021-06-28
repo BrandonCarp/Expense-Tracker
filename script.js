@@ -57,26 +57,6 @@ let newRow = function(theCurrency, theItem, theDate, theCost) {
  }
 
 
-//  Saving to local storage  
- const localStorageExpense = localStorage.getItem('expenses');
-
- let expenses;
- if(localStorageExpense === null){
-     expenses = []; 
- }  else {
-   expenses = JSON.parse(localStorageExpense);
- }
-
-
-
- expenses.push(currency.value);
- expenses.push(item.value);
- expenses.push(theDay.value);
- expenses.push(cost.value);
-
- localStorage.setItem('expenses', JSON.stringify( expenses ) );
-
-let expenseList = storage.getItem(expenses);
 
 
 
