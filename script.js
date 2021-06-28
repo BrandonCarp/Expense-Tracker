@@ -18,6 +18,7 @@ let newRow = function(theCurrency, theItem, theLocation, theDate, theCost) {
   let costElement = document.createElement('td');
   let delElement = document.createElement('td');
 
+
   if(currency.value === 'card') {
     currencyElement.innerHTML = '<i class="far fa-credit-card"></i>';
   } else if(currency.value == 'crypto') {
@@ -37,6 +38,10 @@ let newRow = function(theCurrency, theItem, theLocation, theDate, theCost) {
   itemElement.textContent = item.value;
   dateElement.textContent = theDay.value;
   costElement.style = 'color: red';
+
+
+
+
   // Delete Button
   delElement.innerHTML = `<i class="fas fa-trash-alt"></i>`;
   delElement.className = 'delBtn';
@@ -59,16 +64,43 @@ let newRow = function(theCurrency, theItem, theLocation, theDate, theCost) {
    alert('Fill out inputs');
  }
 
+
+
+ 
+  // Delete Button
+  delElement.innerHTML = `<i class="fas fa-trash-alt"></i>`;
+  delElement.className = 'delBtn';
+  
+ delElement.firstChild.addEventListener('click', e => {
+   rowElement.remove();
+ });
+
+
+ if(item.value != '' && cost.value != '' && theDay.value != '') {
+  tBody.appendChild(rowElement);
+
+  rowElement.appendChild(currencyElement);
+  rowElement.appendChild(itemElement);
+  rowElement.appendChild(locationElement);
+  rowElement.appendChild(dateElement);
+  rowElement.appendChild(costElement);
+  rowElement.appendChild(delElement);
+ } else {
+   alert('Fill out inputs');
+ };
+
 }
 
 
 
 document.querySelector('#submitBtn').addEventListener('click', (e) => {
 
-  newRow(currency.value, item.value, theDay.value, cost.value);
+  newRow(currency.value, itemLocation.value, item.value, theDay.value, cost.value);
 
 
-  currency.value = '';
+
+currency.value = '';
+itemLocation.value = '';
 item.value = '';
 theDay.value = '';
 cost.value = '';
