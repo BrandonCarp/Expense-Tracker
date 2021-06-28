@@ -54,6 +54,14 @@ form {
   margin-left: 1.8rem;
 }
 
+#name {
+  padding-right: .8rem;
+}
+
+#location {
+  padding-right: .9rem;
+}
+
 #date {
   font-weight: lighter;
 }
@@ -72,6 +80,10 @@ form {
   width: 200px;
   height: 30px;
   margin-left: 1rem;
+}
+
+#locationLabel {
+  margin-left:  .6rem;
 }
 
 #submitBtn {

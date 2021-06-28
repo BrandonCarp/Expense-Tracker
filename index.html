@@ -25,11 +25,15 @@
        <option value="other">Other</option>
      </select> 
      
-     <label id="itemLabel"  for="name">Name:</label>  <input  id="name" type="text" name="name" id="name"> <br>
+     <label id="itemLabel"  for="name">Purchase:</label>  <input  id="name" type="text" name="name" id="name"> <br>
 
      <label id="dateLabel"  for="date">Date:</label> <input  id="date" type="date" name="date" id="date"> 
+
+     <label for="location" id="locationLabel">Location: </label> <input type="text" name="location" id="location">
+     <br>
      
      <label id="costLabel"  for="amount">Amount:</label> <input   type="number" name="amount" id="amount"> <br>
+    
 
     <button  id="submitBtn" type="button">Add a new expense</button>
     
@@ -41,6 +45,7 @@
         <tr>
           <th>Type</th>
           <th>Name</th>
+          <th>Location</th>
           <th>Date</th>
           <th>Amount</th>
           <th>Remove</th>
