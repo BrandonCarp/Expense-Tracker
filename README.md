@@ -7,4 +7,4 @@ Vanila Javascript Expense Tracker
 This is a simple vanilla JS expense tracker. Made during my Software Development Mastermind program.
 
 <h1>Author</h1>
-• Brandon Carpenter - Apsiring Full-Stack Software Developer
+• Brandon Carpenter - Aspiring Full-Stack Software Developer
